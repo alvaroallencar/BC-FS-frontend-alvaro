@@ -32,8 +32,8 @@ footer, header, hgroup, menu, nav, section {
 
 body {
 	line-height: 1;
-  background-color: grey;
-  color: black;
+  background-color: rgba(212, 211, 206, 1);
+  color: rgba(12, 27, 51, 1);
 }
 
 ol, ul {
