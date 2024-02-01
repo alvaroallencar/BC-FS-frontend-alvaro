@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Exercise 4</title>
+  </head>
+  <body>
+    <section>
+      <form action="#" id="form-1">
+        <span id="register-title">Register</span>
+
+        <label for="first-name">
+          <span>First name</span>
+          <input type="text" id="first-name" />
+        </label>
+
+        <label for="last-name">
+          <span>Last name</span>
+          <input type="text" id="last-name" />
+        </label>
+
+        <label for="age">
+          <span>Age</span>
+          <select name="age" id="age">
+            <option value="under-age">Under 18</option>
+            <option value="18-24">18 - 24</option>
+            <option value="25-34">25 - 34</option>
+            <option value="35-44">35 - 44</option>
+            <option value="45-54">45 - 54</option>
+            <option value="55-64">55 - 64</option>
+            <option value="65-74">65 - 74</option>
+            <option value="75-or-older">75 or older</option>
+            <option value="no-answer">I prefer not to answer</option>
+          </select>
+        </label>
+
+        <label for="phone-number">
+          <span>Phone Number</span>
+          <input type="number" id="phone-number" />
+        </label>
+
+        <label for="terms-agreement">
+          <input type="checkbox" name="terms-agreement" id="terms-agreement" />
+          <span>I agree to terms and conditions</span>
+        </label>
+
+        <button type="submit" form="form-1" value="Submit">Register</button>
+      </form>
+    </section>
+  </body>
+</html>

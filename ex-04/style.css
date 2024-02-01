@@ -1,0 +1,67 @@
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  background-color: rgba(12, 27, 51, 1);
+  color: rgba(146, 107, 47, 1);
+  width: 500px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 30px;
+  border-radius: 8px;
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  form {
+    width: 80%;
+    font-size: 1rem;
+  }
+}
+
+label {
+  outline: 1px solid red;
+}
+
+#register-title {
+  align-self: center;
+  font-weight: 700;
+}
+
+input,
+select,
+button {
+  border-radius: 4px;
+  font-size: inherit;
+  background-color: rgba(143, 147, 150, 1);
+}
+
+input:hover,
+select:hover,
+button:hover,
+input:focus,
+select:focus,
+button:focus {
+  transition: all ease-in-out 0.3s;
+  transform: scale(1.01);
+  background-color: rgb(107, 107, 107);
+}
+
+button,
+select,
+#terms-agreement {
+  cursor: pointer;
+}
