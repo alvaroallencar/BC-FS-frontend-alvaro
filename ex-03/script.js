@@ -1,33 +1,34 @@
 const fruitsArray = ["Banana", "Mango", "Orange"];
 
-const addFruitsToArray = () => {
+const handleAddFruitsToArray = () => {
   const input = document.getElementById("fruit-input");
 
   if (input.value !== "") {
     fruitsArray.push(input.value);
-    
+
     renderFruitsArray();
   } else {
     alert("Enter a fruit name");
   }
 };
 
-const renderFruitsArray = () => {
-  const container = document.getElementById("container");
-  container.innerHTML = "";
-
+const createInputContainer = (container) => {
   const input = document.createElement("input");
   input.setAttribute("type", "text");
   input.id = "fruit-input";
-  container.append(input);
 
   const button = document.createElement("button");
   button.innerText = "Add";
+  button.addEventListener("click", handleAddFruitsToArray);
 
-  button.addEventListener("click", addFruitsToArray);
+  const inputContainer = document.createElement("div");
 
-  container.append(button);
+  inputContainer.append(input, button);
 
+  container.append(inputContainer);
+};
+
+const createFruitsList = (container) => {
   const ul = document.createElement("ul");
 
   fruitsArray.forEach((fruitName, index) => {
@@ -52,6 +53,14 @@ const renderFruitsArray = () => {
   });
 
   container.appendChild(ul);
+};
+
+const renderFruitsArray = () => {
+  const container = document.getElementById("container");
+  container.innerHTML = "";
+
+  createInputContainer(container);
+  createFruitsList(container);
 };
 
 renderFruitsArray();
