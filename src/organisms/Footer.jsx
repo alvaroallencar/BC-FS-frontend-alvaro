@@ -1,14 +1,7 @@
-import React from 'react'
-import Contextor from '../context/AppContext'
+import React from "react";
 
 const Footer = () => {
-    return (
-        <footer className='footer'>
-            <p style={ { fontSize: 20 } }>
-                <Contextor />
-            </p>
-        </footer>
-    )
-}
+  return <footer className="footer"></footer>;
+};
 
-export default Footer
+export default Footer;
