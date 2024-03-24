@@ -6,13 +6,28 @@ const userSlice = createSlice({
   initialState: userList,
   reducers: {
     createUser: (state, action) => {
-      console.log(action);
+      const foundEmail = state.find(
+        (user) =>
+          user.email.toLowerCase() === action.payload.email.toLowerCase()
+      );
+
+      if (foundEmail) {
+        return alert("Email already registered");
+      }
+
+      state.push(action.payload);
     },
     updateUser: (state, action) => {
-      console.log(action);
+      const { email, user } = action.payload;
+
+      const userIndex = state.findIndex((user) => user.email === email);
+
+      if (userIndex !== -1) {
+        state[userIndex] = { ...state[userIndex], ...user };
+      }
     },
     deleteUser: (state, action) => {
-      console.log(action);
+      return state.filter((user) => user.email !== action.payload);
     },
   },
 });

@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
-import { createUser } from "../../app/reducers/userReducer";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { updateUser } from "../../../app/reducers/userReducer";
 
-function Register() {
+function Update() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
   const [user, setUser] = useState({
     name: "",
-    email: "",
     phoneNumber: "",
     password: "",
   });
@@ -19,13 +19,13 @@ function Register() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(createUser(user));
-    navigate("/login");
+    dispatch(updateUser({ email: location.state.email, user }));
+    navigate("/home");
   };
 
   return (
     <>
-      <h1>Register</h1>
+      <h1>Update user</h1>
 
       <form onSubmit={handleSubmit}>
         <div>
@@ -51,17 +51,6 @@ function Register() {
           </label>
         </div>
         <div>
-          <label htmlFor="email">
-            <span>Email</span>
-            <input
-              type="email"
-              name="email"
-              onChange={handleChange}
-              value={user.email}
-            />
-          </label>
-        </div>
-        <div>
           <label htmlFor="password">
             <span>Password</span>
             <input
@@ -73,12 +62,12 @@ function Register() {
           </label>
         </div>
 
-        <button type="submit">Register</button>
+        <button type="submit">Update</button>
       </form>
 
-      <Link to="/login">Login</Link>
+      <Link to="/home">Go Back</Link>
     </>
   );
 }
 
-export default Register;
+export default Update;

@@ -29,7 +29,7 @@ function Login() {
 
     setLoginData({ email: "", password: "" });
 
-    navigate("/home");
+    return navigate("/home");
   };
 
   return (
