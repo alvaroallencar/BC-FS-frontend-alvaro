@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
-import { loginUser } from "../../app/reducers/userReducer";
+import { useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 
 function Login() {
-  const dispatch = useDispatch();
+  const users = useSelector((state) => state.users);
+  const navigate = useNavigate();
+
   const [loginData, setLoginData] = useState({
     email: "",
     password: "",
@@ -16,8 +17,19 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(loginUser(loginData));
+
+    const foundUser = users.find(
+      (user) =>
+        user.email === loginData.email && user.password === loginData.password
+    );
+
+    if (!foundUser) {
+      return alert("Email and password don't match");
+    }
+
     setLoginData({ email: "", password: "" });
+
+    navigate("/home");
   };
 
   return (

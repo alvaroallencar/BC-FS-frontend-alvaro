@@ -8,9 +8,6 @@ const userSlice = createSlice({
     createUser: (state, action) => {
       console.log(action);
     },
-    loginUser: (state, action) => {
-      console.log(action);
-    },
     updateUser: (state, action) => {
       console.log(action);
     },
